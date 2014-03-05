@@ -5,6 +5,7 @@ NkuRails::Application.routes.draw do
   resources :sessions
   resources :attendances
   resource :seating_chart
+  resources :assignments
 
   get "sign_out", to: "sessions#destroy"
   get "profile", to: "students#edit"
