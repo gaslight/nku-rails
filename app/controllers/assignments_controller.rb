@@ -1,4 +1,6 @@
 class AssignmentsController < ApplicationController
+  before_filter :require_administrator
+  
   def new
     @assignment = Assignment.new
   end

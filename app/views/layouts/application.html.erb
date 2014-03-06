@@ -39,7 +39,7 @@
   </nav>
 
   <% flash.each do |key, value| %>
-    <div class="<%= flash_class(key) %> push--top">
+    <div class="flash <%= flash_class(key) %> push--top">
       <%= value %>
     </div>
   <% end %>

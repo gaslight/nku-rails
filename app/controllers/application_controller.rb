@@ -17,4 +17,12 @@ class ApplicationController < ActionController::Base
       redirect_to new_session_path
     end
   end
+
+  def require_administrator
+    if current_student && current_student.admin?
+      true
+    else
+      redirect_to root_path, notice: "Unauthorized"
+    end
+  end
 end
