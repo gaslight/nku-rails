@@ -5,10 +5,11 @@ class NewAssignmentPage
     visit "/assignments/new"
   end
 
-  def enter_grade(grade)
-    fill_in "Name", with: grade.name
-    fill_in "Score", with: grade.score
-    fill_in "Total", with: grade.total
+  def fill_form(assignment)
+    select assignment.student.name
+    fill_in "Name", with: assignment.name
+    fill_in "Score", with: assignment.score
+    fill_in "Total", with: assignment.total
   end
 
   def submit
