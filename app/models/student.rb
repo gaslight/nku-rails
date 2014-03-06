@@ -1,5 +1,6 @@
 class Student < ActiveRecord::Base
   has_many :attendances
+  has_many :assignments
 
   has_secure_password
 

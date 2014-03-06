@@ -1,6 +1,10 @@
 class AssignmentsController < ApplicationController
-  before_filter :require_administrator
-  
+  before_filter :require_administrator, only: [:new, :create]
+
+  def index
+    @assignments = current_student.assignments
+  end
+
   def new
     @assignment = Assignment.new
   end
