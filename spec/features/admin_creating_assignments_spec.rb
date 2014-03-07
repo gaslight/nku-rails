@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature "Creating assignments" do
-  let(:new_assignment_page) { NewAssignmentPage.new }
+  let(:new_assignment_page) { AdminNewAssignmentPage.new }
   let(:new_assignment) { build(:assignment, student: student) }
 
   context "as an admin" do

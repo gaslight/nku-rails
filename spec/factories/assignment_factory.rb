@@ -3,5 +3,6 @@ FactoryGirl.define do
     sequence(:name) { |n| "Assignment"}
     score 5
     total 10
+    student
   end
 end

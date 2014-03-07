@@ -1,8 +1,8 @@
-class NewAssignmentPage
+class AdminNewAssignmentPage
   include Capybara::DSL
 
   def visit_page
-    visit "/assignments/new"
+    visit "/admin/assignments/new"
   end
 
   def fill_form(assignment)

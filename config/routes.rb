@@ -7,6 +7,10 @@ NkuRails::Application.routes.draw do
   resource :seating_chart
   resources :assignments
 
+  namespace :admin do
+    resources :assignments
+  end
+
   get "sign_out", to: "sessions#destroy"
   get "profile", to: "students#edit"
 
