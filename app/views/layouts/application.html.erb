@@ -23,7 +23,7 @@
         <li><%= link_to "All students", students_path %></li>
         <li><%= link_to "My assignments", assignments_path %></li>
         <% if current_student.admin? %>
-          <li><%= link_to "All assignments", admin_assignments_path %></li>
+          <li><%= link_to "Admin", admin_assignments_path %></li>
         <% end %>
       </ul>
     <% end %>
