@@ -21,4 +21,13 @@
       </tr>
     <% end %>
   </tbody>
+
+  <tfoot class="total">
+    <tr>
+      <th>Average:</th>
+      <th></th>
+      <th></th>
+      <th class="total__percentage"><%= @assignments.average_percentage %>%</th>
+    </tr>
+  </tfoot>
 </table>
