@@ -2,16 +2,16 @@ require 'spec_helper'
 
 describe Assignment do
   describe "#percentage" do
-    let(:assignment) { create(:assignment, score: 5, total: 10)}
     specify do
+      assignment = Assignment.new(score: 5, total: 10)
       expect(assignment.percentage).to eq(50)
     end
   end
 
-  describe ".average" do
-    let!(:assignment1) { create(:assignment, score: 4, total: 10)}
-    let!(:assignment2) { create(:assignment, score: 8, total: 10)}
+  describe ".average_percentage" do
     specify do
+      assignment1 = Assignment.create(score: 8, total: 10)
+      assignment2 = Assignment.create(score: 4, total: 10)
       expect(Assignment.average_percentage).to eq(60)
     end
   end
