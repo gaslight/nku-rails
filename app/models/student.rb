@@ -16,7 +16,16 @@ class Student < ActiveRecord::Base
     joins(:attendances).where(attendances: {attended_on: now})
   end
 
+  def self.find_or_create_from_email(email)
+    password = SecureRandom.base64
+    Student.where(email: email.downcase).first_or_create!(password: password, password_confirmation: password)
+  end
+
   def avatar
     Avatar.from_student(self)
+  end
+
+  def assignments
+    admin? ? Assignment.all : super
   end
 end
