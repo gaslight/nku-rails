@@ -6,10 +6,10 @@ NkuRails::Application.routes.draw do
   resources :attendances
   resource :seating_chart
   resources :assignments
-  resource :assignment_upload
 
   namespace :admin do
     resources :assignments
+    resource :assignment_upload
   end
 
   get "sign_out", to: "sessions#destroy"
