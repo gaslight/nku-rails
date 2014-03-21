@@ -24,8 +24,4 @@ class Student < ActiveRecord::Base
   def avatar
     Avatar.from_student(self)
   end
-
-  def assignments
-    admin? ? Assignment.all : super
-  end
 end
