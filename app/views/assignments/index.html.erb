@@ -1,0 +1,33 @@
+<div class="page-header">
+  <h1>My Assignments</h1>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Score</th>
+      <th>Total</th>
+      <th>Percentage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @assignments.each do |assignment| %>
+      <tr id="<%= dom_id(assignment) %>">
+        <td><%= assignment.name %></td>
+        <td><%= assignment.score %></td>
+        <td><%= assignment.total %></td>
+        <td><%= assignment.percentage %>%</td>
+      </tr>
+    <% end %>
+  </tbody>
+
+  <tfoot class="total">
+    <tr>
+      <th>Average:</th>
+      <th></th>
+      <th></th>
+      <th class="total__percentage"><%= @assignments.average_percentage %>%</th>
+    </tr>
+  </tfoot>
+</table>

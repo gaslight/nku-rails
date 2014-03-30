@@ -16,6 +16,18 @@
       </div>
     </div>
 
+    <% if current_student %>
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Seating chart", seating_chart_path %></li>
+        <li><%= link_to "All attendances", attendances_path %></li>
+        <li><%= link_to "All students", students_path %></li>
+        <li><%= link_to "My assignments", assignments_path %></li>
+        <% if current_student.admin? %>
+          <li><%= link_to "Admin", admin_assignments_path %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
     <div class="collapse navbar-collapse navbar-right">
       <% if current_student %>
         <p class="navbar-text current-student">
@@ -31,7 +43,7 @@
   </nav>
 
   <% flash.each do |key, value| %>
-    <div class="<%= flash_class(key) %> push--top">
+    <div class="flash <%= flash_class(key) %> push--top">
       <%= value %>
     </div>
   <% end %>
