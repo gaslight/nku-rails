@@ -2,6 +2,8 @@ class Student < ActiveRecord::Base
   has_many :attendances
   has_many :assignments
 
+  validates :email, uniqueness: true
+
   has_secure_password
 
   def self.in_seat(seat, now=Date.today)
